@@ -1,0 +1,147 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lab 2</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css?family=Modak');
+
+        .container > header {
+            grid-area: header;
+        }
+
+        .container > nav {
+            grid-area: nav;
+            padding: 1rem;
+        }
+
+        .container > main {
+            grid-area: main;
+            padding: 1rem;
+        }
+
+        .container > .ads-sidebar {
+            grid-area: ads;
+            padding: 1rem;
+            font-size: 2rem;
+            animation: opaque 2s infinite alternate;
+        }
+
+        .container > footer {
+            grid-area: footer;
+            padding: 1rem;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: pink;
+        }
+
+        .container {
+            display: grid;
+            height: 100vh;
+            grid-gap: 1rem;
+            grid-template-areas:
+                    "header"
+                    "nav"
+                    "main"
+                    "ads"
+                    "footer";
+        }
+
+        .container > * {
+            background-color: aliceblue;
+            color: #ff00ff;
+            text-align: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 1rem;
+            font-family: Verdana, Arial, sans-serif;
+        }
+
+        @media screen and (min-width: 768px){
+            .container{
+                grid-template-areas:
+                "header header header header header"
+                "ads main main main nav"
+                "footer footer footer footer nav"
+            }
+        }
+
+        .name{
+            width: 2.5rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: 'Modak', cursive;
+            font-size: 4rem;
+            color: #ffff66;
+            text-shadow: 10px 10px #c4b60b;
+            transition: all .10s;
+            animation: opaque 1s infinite alternate;
+        }
+
+        .name:hover{
+            color: #ff99ff;
+            text-shadow: 10px 10px #ff00ff;
+            font-size: 5rem;
+            animation: flip 1s infinite alternate;
+        }
+
+        @keyframes opaque{
+            from{opacity: 1;}
+            to{opacity: 0.5;}
+        }
+
+        @keyframes flip{
+            from{transform: rotateY(150deg);}
+            to{transform: rotateY(-150deg);}
+        }
+
+        ul {
+            list-style-type: circle;
+        }
+    </style>
+</head>
+
+<body>
+<div class = "container">
+    <header>
+        <div class="name">M</div>
+        <div class="name">a</div>
+        <div class="name">u</div>
+        <div class="name">r</div>
+        <div class="name">e</div>
+        <div class="name">e</div>
+        <div class="name">n</div>
+    </header>
+    <nav>
+        <ul>
+            <li>Menu Item</li>
+            <li>Menu Item</li>
+            <li>Menu Item</li>
+            <li>Menu Item</li>
+            <li>Menu Item</li>
+            <li>Menu Item</li>
+        </ul>
+    </nav>
+    <main>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+        Quisque eu consequat urna. Curabitur ullamcorper, diam et
+        venenatis dictum, augue ex malesuada lectus, sit amet mollis
+        erat lorem ut felis. Fusce tincidunt pharetra tellus sit amet
+        commodo. Praesent sed pellentesque ipsum. Vivamus a ultricies
+        justo, et gravida erat. Suspendisse vehicula mollis est in finibus.
+        Vivamus odio ante, viverra eu ex eget, sodales suscipit libero.
+        Cras orci nunc, consectetur posuere sem dignissim, finibus tincidunt leo.
+        Nam condimentum molestie purus, sit amet ullamcorper ligula luctus in.
+    </main>
+    <aside class="ads-sidebar">Ads</aside>
+    <footer>Footer</footer>
+</div>
+</body>
+</html>

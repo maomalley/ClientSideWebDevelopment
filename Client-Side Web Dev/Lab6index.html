@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lab 6</title>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css"
+          integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <link href="main.css" rel="stylesheet"/>
+</head>
+<body>
+<div id="app" class="container">
+    <header>
+        <div class="wrapper">
+            <div class="name">M</div>
+            <div class="name">a</div>
+            <div class="name">u</div>
+            <div class="name">r</div>
+            <div class="name">e</div>
+            <div class="name">e</div>
+            <div class="name">n</div>
+        </div>
+        <div class="title">
+            <p>You have {{cardCount}} cards.</p>
+        </div>
+        <div>
+            <button>Reshuffle</button>
+        </div>
+    </header>
+    <main>
+        <div id="tabletop" class="tabletop">
+            <div v-for="card in cards" class="card" v-bind:class="card.cardType" v-on:click="cardCount++">
+                <div class="card-inner">
+                    <div class="card-front">
+                        <img v-bind:src="card.cardArt" v-bind:alt="card.cardName">
+                        <div class="description">
+                            <h4>{{card.cardName}}</h4>
+                            <p>{{card.cardDescription}}</p>
+                        </div>
+                        <i class="symbol" v-bind:class="[card.faSymbolType, card.faSymbol]"></i>
+                    </div>
+                    <div class="card-back"></div>
+                </div>
+            </div>
+        </div>
+    </main>
+</div>
+<script src="main.js"></script>
+</body>
+</html>

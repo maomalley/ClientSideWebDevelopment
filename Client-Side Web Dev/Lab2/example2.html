@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Lab 2</title>
+    <style>
+        .container > header {
+            grid-area: header;
+        }
+
+        .container > nav {
+            grid-area: nav;
+        }
+
+        .container > main {
+            grid-area: main;
+        }
+
+        .container > .ads-sidebar {
+            grid-area: ads;
+        }
+
+        .container > footer {
+            grid-area: footer;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            background-color: pink;
+            display: grid;
+            height: 100vh;
+            grid-gap: 1rem;
+            grid-template-areas:
+            "header header header header header"
+            "nav main main main ads"
+            "nav footer footer footer footer";
+        }
+
+        .container > * {
+            background-color: aliceblue;
+            color: deeppink;
+            text-align: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 3rem;
+        }
+    </style>
+</head>
+<body>
+    <div class = "container">
+        <header>HEADER</header>
+        <nav>Menu</nav>
+        <main>Main Content</main>
+        <aside class="ads-sidebar">Ads</aside>
+        <footer>Footer</footer>
+    </div>
+</body>
+</html>

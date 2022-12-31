@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Lab 1</title>
+    <link href="reset.css" rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css?family=Modak');
+
+        main{
+            background-color: #f0f8ff;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .name{
+            height: 100px;
+            width: 100px;
+            margin: 10px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: 'Modak', cursive;
+            font-size: 400%;
+            color: #ffff66;
+            text-shadow: 10px 10px #c4b60b;
+            transition: all .10s;
+            animation: opaque 1s infinite alternate;
+        }
+
+        .name:hover{
+            color: #ff99ff;
+            text-shadow: 10px 10px #ff00ff;
+            font-size: 600%;
+            animation: flip 1s infinite alternate;
+        }
+
+        @keyframes opaque{
+            from{opacity: 1;}
+            to{opacity: 0.5;}
+        }
+
+        @keyframes flip{
+            from{transform: rotateY(150deg);}
+            to{transform: rotateY(-150deg);}
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <div class="name">M</div>
+        <div class="name">a</div>
+        <div class="name">u</div>
+        <div class="name">r</div>
+        <div class="name">e</div>
+        <div class="name">e</div>
+        <div class="name">n</div>
+    </main>
+</body>
+</html>

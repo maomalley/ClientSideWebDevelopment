@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lab 6</title>
+    <link rel="stylesheet"
+          href="https://cdn.jsdelivr.net/npm/normalize.css@8.0.0/normalize.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css"
+          integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css?family=Modak');
+        @import url('https://fonts.googleapis.com/css?family=Capriola');
+        @import url('https://fonts.googleapis.com/css?family=Josefin+Sans');
+
+        :root {
+            --color-one: aliceblue;
+            --color-two: pink;
+            --color-three: rgba(216, 151, 196, 0.25);
+            --color-one-dark: #8da7ff;
+            --color-two-dark: #ff9df2;
+            --color-three-dark: #c979ff;
+        }
+
+        .wrapper {
+            display: flex;
+            justify-content: center;
+        }
+
+        .name {
+            width: 2.5rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: 'Modak', cursive;
+            font-size: 4rem;
+            color: #ffff66;
+            text-shadow: 10px 10px #c4b60b;
+            transition: all .10s;
+            animation: opaque 1s infinite alternate;
+        }
+
+        .name:hover {
+            color: #ff99ff;
+            text-shadow: 10px 10px #ff00ff;
+            font-size: 5rem;
+            animation: flip 1s infinite alternate;
+        }
+
+        @keyframes opaque {
+            from {
+                opacity: 1;
+            }
+            to {
+                opacity: 0.5;
+            }
+        }
+
+        @keyframes flip {
+            from {
+                transform: rotateY(150deg);
+            }
+            to {
+                transform: rotateY(-150deg);
+            }
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: var(--color-two);
+        }
+
+        .container > header {
+            grid-area: header;
+            height: 160px;
+            background-color: var(--color-one);
+        }
+
+        .container > main {
+            grid-area: main;
+            background-color: var(--color-one);
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: center;
+            padding: 1rem;
+        }
+
+        .container {
+            display: grid;
+            height: 100vh;
+            grid-gap: 1rem;
+            grid-template-areas: "header header header header" "main main main main" "main main main main" "main main main main";
+        }
+
+        .container > * {
+            text-align: center;
+        }
+
+        .tabletop > .card {
+            height: 28rem;
+            width: 18rem;
+            border-radius: 2em;
+            box-shadow: var(--color-three) .3em .3em .1em;
+            overflow: hidden;
+            display: grid;
+            grid-template-rows: 1fr 7em;
+            position: relative;
+        }
+
+        .card > .art {
+            background-color: var(--color-two);
+        }
+
+        .card.duck > .art {
+            background: url(https://image.ibb.co/fMkie9/card1.png) center / cover no-repeat;
+        }
+
+        .card.mouse > .art {
+            background: url(https://image.ibb.co/emP6XU/card2.png) center / cover no-repeat;
+        }
+
+        .card.bunny > .art {
+            background: url(https://image.ibb.co/gRpWXU/card4.png) center / cover no-repeat;
+        }
+
+        .card.dog > .art {
+            background: url(https://image.ibb.co/hfuyCU/card3.png) center / cover no-repeat;
+        }
+
+        .card.alpaca > .art {
+            background: url(https://image.ibb.co/cV1ye9/alpaca.png) center / cover no-repeat;
+        }
+
+        .card.chinchilla > .art {
+            background: url(https://image.ibb.co/cFjJxU/card6.png) center / cover no-repeat;
+        }
+
+        .card.cat > .art {
+            background: url(https://image.ibb.co/j6s5cU/card7.png) center / cover no-repeat;
+        }
+
+        .card.bear > .art {
+            background: url(https://image.ibb.co/bxNtWp/card8.png) center / cover no-repeat;
+        }
+
+        .card.penguin > .art {
+            background: url(https://image.ibb.co/iap7rp/card9.png) center / cover no-repeat;
+        }
+
+        .card.koala > .art {
+            background: url(https://image.ibb.co/crgyxU/card10.png) center / cover no-repeat;
+        }
+
+        .card.sloth > .art {
+            background: url(https://image.ibb.co/bBdBHU/card11.png) center / cover no-repeat;
+        }
+
+        .card.lion > .art {
+            background: url(https://image.ibb.co/hKXSrp/card12.png) center / cover no-repeat;
+        }
+
+        .card > .description {
+            font-family: 'Josefin Sans', sans-serif;
+            background-color: var(--color-three);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: var(--color-one-dark);
+            flex-direction: column;
+        }
+
+        .card > .description > h4 {
+            font-family: 'Capriola', sans-serif;
+            font-size: 1.5rem;
+            margin: 0;
+            justify-content: initial;
+            align-items: initial;
+            width: 100%;
+            color: var(--color-three-dark);
+        }
+
+        .card > .symbol {
+            position: absolute;
+            top: 22rem;
+            left: 1.3rem;
+            font-size: 2rem;
+            color: var(--color-two-dark);
+        }
+
+        .tabletop {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr 1fr;
+            grid-gap: 1rem;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .title {
+            font-family: 'Capriola', sans-serif;
+            font-size: 1.5rem;
+            text-shadow: .2rem .2rem var(--color-three);
+            color: var(--color-two);
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <header>
+        <div class="wrapper">
+            <div class="name">M</div>
+            <div class="name">a</div>
+            <div class="name">u</div>
+            <div class="name">r</div>
+            <div class="name">e</div>
+            <div class="name">e</div>
+            <div class="name">n</div>
+        </div>
+    </header>
+    <main>
+        <div id="tabletop" class="tabletop" v-on="click: accrueCards"></div>
+    </main>
+</div>
+<script>
+    "use strict";
+
+    const vm = new Vue({
+        el: '#container',
+        data: {
+            accruedCards: []
+        },
+        methods: {
+            accrueCards: function(){
+                this.accruedCards = [];
+            }
+        },
+    });
+
+    function generateCard(cardObj) {
+        const tabletop = document.getElementById("tabletop");
+
+        const card = document.createElement("div");
+        card.classList.add("card", cardObj.cardType);
+        tabletop.appendChild(card);
+
+        const cardImage = document.createElement("div");
+        cardImage.classList.add("art");
+        card.appendChild(cardImage);
+
+        const description = document.createElement("div");
+        description.classList.add("description");
+        card.appendChild(description);
+
+        const descriptionH4 = document.createElement("h4");
+        description.appendChild(descriptionH4);
+        const nameText = document.createTextNode(cardObj.cardName);
+        descriptionH4.appendChild(nameText);
+
+        const flavorPara = document.createElement("p");
+        description.appendChild(flavorPara);
+        const flavorText = document.createTextNode(cardObj.cardDescription);
+        flavorPara.appendChild(flavorText);
+
+        const symbol = document.createElement("i");
+        symbol.classList.add(cardObj.faSymbolType, cardObj.faSymbol, "symbol");
+        card.appendChild(symbol);
+    }
+
+    const cards = [];
+    cards.push({   
+        cardType: "duck",
+        cardName: "Duck",
+        cardDescription: "A pink duck that glows in the dark.",
+        faSymbol: "fa-lightbulb",
+        faSymbolType: "fas",});
+    cards.push({
+        cardType: "mouse",
+        cardName: "Mouse",
+        cardDescription: "A very cool blue mouse.",
+        faSymbol: "fa-birthday-cake",
+        faSymbolType: "fas",
+    });
+    cards.push({
+            cardType: "bunny",
+            cardName: "Bunny",
+            cardDescription: "A hoppy mint bunny.",
+            faSymbol: "fa-socks",
+            faSymbolType: "fas",
+        });
+    cards.push({
+        cardType: "dog",
+        cardName: "Dog",
+        cardDescription: "A warm and friendly dog.",
+        faSymbol: "fa-socks",
+        faSymbolType: "fas",        
+    });
+    cards.push({
+        cardType: "alpaca",
+        cardName: "Alpaca",
+        cardDescription: "A fuzzy blue alpaca.",
+        faSymbol: "fa-cookie-bite",
+        faSymbolType: "fas",
+    });
+    cards.push({
+        cardType: "chinchilla",
+        cardName: "Chinchilla",
+        cardDescription: "A soft chinchilla that loves seeds.",
+        faSymbol: "fa-cookie-bite",
+        faSymbolType: "fas",
+    });
+    cards.push({
+        cardType: "cat",
+        cardName: "Cat",
+        cardDescription: "A fluffy purple cat.",
+        faSymbol: "fa-birthday-cake",
+        faSymbolType: "fas",
+    });
+    cards.push({
+        cardType: "bear",
+        cardName: "Bear",
+        cardDescription: "A fluffy pink bear.",
+        faSymbol: "fa-snowflake",
+        faSymbolType: "fas",
+    });
+    cards.push({
+        cardType: "penguin",
+        cardName: "Penguin",
+        cardDescription: "A very fancy penguin.",
+        faSymbol: "fa-linux",
+        faSymbolType: "fab",
+    });
+    cards.push({
+        cardType: "koala",
+        cardName: "Koala",
+        cardDescription: "A happy koala.",
+        faSymbol: "fa-snowflake",
+        faSymbolType: "fas",
+    });
+    cards.push({
+        cardType: "sloth",
+        cardName: "Sloth",
+        cardDescription: "A happy sloth.",
+        faSymbol: "fa-coffee",
+        faSymbolType: "fas",
+    });
+    cards.push({
+        cardType: "lion",
+        cardName: "Lion",
+        cardDescription: "A proud lion.",
+        faSymbol: "fa-coffee",
+        faSymbolType: "fas",
+    });
+
+    cards.map(generateCard);
+</script>
+</body>
+</html>

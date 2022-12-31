@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Shopping Cart</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.0/normalize.css" rel="stylesheet"/>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css"
+          integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+    <style>
+        body main {
+            display: grid;
+            height: 100vh;
+            width: 100vw;
+            grid-template-areas:
+                "products-area shopping-cart-area";
+            grid-template-columns: 75% 1fr;
+        }
+        .products-area {
+            grid-area: products-area;
+            background-color: darkgoldenrod;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            grid-gap: 1rem;
+            justify-content: space-evenly;
+            align-content: space-evenly;
+            justify-items: center;
+            align-items: center;
+        }
+        .shopping-cart-area {
+            grid-area: shopping-cart-area;
+            background-color: springgreen;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .shopping-cart-area .product {
+            margin-top: 1rem;
+        }
+        .product{
+            background-color: rosybrown;
+            height: 10vw;
+            width: 20vw;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3rem;
+            color: cornsilk;
+        }
+    </style>
+</head>
+<body>
+    <main id="app">
+        <products-area>
+            <product v-for="(product, index) in products" :index="index" :product-number="product" @click="addToShoppingCart"></product>
+        </products-area>
+        <shopping-cart-area>
+            <product v-for="(product, index) in shoppingCartProducts" :index="index" :product-number="product" @click="removeFromShoppingCart"></product>
+        </shopping-cart-area>
+    </main>
+
+    <script>
+        Vue.component('products-area',{
+          template: `
+            <section class="products-area">
+                <slot></slot>
+            </section>
+          `
+        });
+        Vue.component('shopping-cart-area', {
+          template: `
+            <section class="shopping-cart-area">
+                <slot></slot>
+            </section>
+          `
+        });
+        Vue.component('product', {
+          props: ['productNumber', 'index'],
+          template: `
+            <div class="product" @click="$emit('click', index)">{{productNumber}}</div>
+          `
+        });
+        const vm = new Vue({
+          el: "#app",
+          data:{
+            products: [1,2,3,4,5],
+            shoppingCartProducts: []
+          },
+          methods: {
+            addToShoppingCart: function(productsIndex){
+              //Add the product at the index in the products array to the shopping cart
+              this.shoppingCartProducts.push(this.products[productsIndex]);
+              //Remove/Splice the index from the products array
+              this.products.splice(productsIndex, 1);
+            },
+            removeFromShoppingCart: function(cartIndex){
+              this.products.push(this.shoppingCartProducts[cartIndex]);
+              this.shoppingCartProducts.splice(cartIndex, 1);
+            }
+          }
+        });
+    </script>
+</body>
+</html>

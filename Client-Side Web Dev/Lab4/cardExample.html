@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lab 4</title>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css"
+          integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+    <style>
+        @import url('https://fonts.googleapis.com/css?family=Modak');
+
+        .tabletop {
+            height: 100vh;
+            background-color: brown;
+        }
+
+        .tabletop > .card {
+            height: 30rem;
+            width: 20rem;
+            background-color: blue;
+            border-radius: 2em;
+            box-shadow: rgba(0, 0, 0, 0.5) .5em .5em .1em;
+            overflow: hidden;
+            display: grid;
+            grid-template-rows: 1fr 5em;
+        }
+
+        .card > .art {
+            /*height: 10em;
+            width: 10em;*/
+            background-color: red;
+            background: url(https://static.boredpanda.com/blog/wp-content/uploads/2017/03/cute-funny-alpacas-3-58c64c1c3a5dd__605.jpg)
+                    center / cover no-repeat;
+        }
+
+        .card > .description {
+            background-color: gray;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-shadow: black 1px 1px 2px;
+            color: white;
+            flex-direction: column;
+            /* find a cute font here or in h4 */
+        }
+
+    .card > .description > h4 {
+        font-size: 1.5rem;
+        margin: 0;
+        padding: 0;
+        background-color: rgba(0,0,0,0.25);
+        width: 100%;
+        padding-left: 1rem;
+    }
+
+    .card > .symbol {
+        position: absolute;
+        top: 2rem;
+        left: 2rem;
+        font-size: 2rem;
+        color: orange;
+        /*text-shadow: 1px 1px 1px 1px rgba(0,0,0,0.5), -1px -1px 1px 1px rgb(0,0,0,0.5);/*
+    }
+    </style>
+</head>
+<body>
+<div id="tabletop" class="tabletop"></div>
+</body>
+<script>
+    const tabletop = document.getElementById("tabletop");
+
+    const card = document.createElement("div");
+    card.classList.add("card");
+    tabletop.appendChild(card);
+
+    const cardImage = document.createElement("div");
+    cardImage.classList.add("art");
+    //cardImage.src = ""; if     const cardImage = document.createElement("img");
+    card.appendChild(cardImage);
+
+    const description = document.createElement("div");
+    description.classList.add("description");
+    card.appendChild(description);
+
+    const descriptionH4 = document.createElement("h4");
+    description.appendChild(descriptionH4);
+    const nameText = document.createTextNode("Alpaca");
+    descriptionH4.appendChild(nameText);
+
+    const flavorPara = document.createElement("p");
+    description.appendChild(flavorPara);
+
+    const flavorText = document.createTextNode("Good fluffy alpaca")
+    description.appendChild(flavorText);
+
+    const symbol = document.createElement("i");
+    symbol.classList.add("fas", "fa-rocket", "symbol");
+    card.appendChild(symbol);
+</script>
+</html>

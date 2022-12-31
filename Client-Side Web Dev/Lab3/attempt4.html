@@ -1,0 +1,158 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lab 3</title>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css"
+          integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+    <style>
+        @import url('https://fonts.googleapis.com/css?family=Modak');
+
+        body {
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            height: 100px;
+            text-align: center;
+            background-color: aliceblue;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        nav ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: space-evenly;
+            position: fixed;
+            bottom: 0;
+            width: 100vw;
+        }
+
+        nav ul li {
+            background-color: lightgoldenrodyellow;
+            flex-grow: 1;
+            display: flex;
+            justify-content: center;
+        }
+
+        nav ul li a {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 1em;
+            text-decoration: none;
+            color: hotpink;
+            flex-direction: column;
+            font-size: .75rem;
+        }
+
+        nav ul li a i {
+            font-size: 3rem;
+        }
+
+        nav ul li a:hover {
+            background-color: #fdff6e;
+        }
+
+        main {
+            background-color: #faff82;
+        }
+
+        main article {
+            width: 50vw;
+            margin: 0 auto;
+        }
+
+        footer {
+            height: 100px;
+            text-align: center;
+            background-color: lightpink;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .container {
+            display: flex;
+            flex-direction: column;
+            width: 100vw;
+        }
+
+        @media screen and (min-width: 768px) {
+            nav ul {
+                position: static;
+            }
+        }
+
+    </style>
+</head>
+
+<body>
+
+<div class="container">
+    <header>
+        Name
+    </header>
+    <nav>
+        <ul>
+            <li><a href="#"><i class="fas fa-dice-one"></i>One</a></li>
+            <li><a href="#"><i class="fas fa-dice-two"></i>Two</a></li>
+            <li><a href="#"><i class="fas fa-dice-three"></i>Three</a></li>
+            <li><a href="#"><i class="fas fa-dice-four"></i>Four</a></li>
+        </ul>
+    </nav>
+    <main>
+        <article id="main-article">
+            <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. In accumsan neque quis velit eleifend dictum.
+                Mauris vitae felis ut velit viverra placerat. Morbi a enim odio. Donec eu elit risus. Praesent at ante
+                viverra libero elementum tincidunt. Duis dignissim, lacus a elementum congue, dolor neque commodo elit, id
+                auctor leo elit semper eros. Sed vestibulum sem vitae dui vestibulum interdum. Curabitur vitae dolor a ante
+                faucibus porttitor vitae ut massa. Donec dapibus augue sed purus pulvinar, ac elementum neque scelerisque.
+                Maecenas vulputate mauris velit, ut auctor quam facilisis eu. Sed non odio accumsan leo fringilla lobortis.
+                Vestibulum urna libero, laoreet vitae lacus a, pulvinar mollis arcu.
+            </p>
+            <p>
+                Proin pellentesque augue sed est lobortis, eget efficitur arcu euismod. Cras vitae dui tristique, tempus
+                justo posuere, cursus justo. Phasellus sagittis nisl vitae ullamcorper efficitur. Nunc ut aliquet velit.
+                Aliquam erat volutpat. Sed at lectus aliquet, sagittis massa non, ullamcorper lectus. Vivamus tempor lorem
+                sit amet lectus dignissim, sit amet mollis augue maximus. Maecenas eros felis, venenatis sed diam eu,
+                blandit fringilla ante. Aliquam mattis velit sed laoreet dapibus. Praesent vel posuere urna, quis dignissim
+                elit.
+            </p>
+            <p>
+                Quisque aliquam, lacus vitae vestibulum elementum, tortor quam vestibulum mi, quis ullamcorper augue massa
+                ac ex. Sed porta ultrices magna vel ullamcorper. Vivamus posuere sapien ac dictum gravida. Nunc varius,
+                nulla ut mollis ullamcorper, est nunc congue nulla, ac suscipit erat mi sollicitudin neque. Vestibulum
+                mollis tincidunt nisi, ac tincidunt mauris congue ut. Pellentesque habitant morbi tristique senectus et
+                netus et malesuada fames ac turpis egestas. Nunc et lorem id ipsum hendrerit auctor.
+            </p>
+            <p>
+                Praesent cursus dui ac leo blandit, non aliquam diam molestie. Donec malesuada massa magna, sed malesuada
+                lacus egestas id. Cras pellentesque odio in arcu auctor, nec convallis risus pharetra. Cras pharetra nisi
+                vehicula, auctor libero quis, condimentum mi. Aliquam nec turpis sit amet lorem pharetra vestibulum id vel
+                leo. Duis non diam non tellus ullamcorper auctor. Vestibulum dictum magna vel volutpat egestas.
+            </p>
+            <p>
+                Praesent tristique, libero sed eleifend luctus, ex libero pretium ligula, ut fermentum justo tortor sit amet
+                elit. Nullam pharetra ac dui vitae dictum. Duis quis nisl nibh. Etiam a fermentum mauris. In sodales
+                porttitor tempor. Sed in orci id diam facilisis consectetur ac accumsan ipsum. Morbi sollicitudin eu lectus
+                vitae imperdiet. Sed dolor neque, pellentesque ac urna eget, malesuada rutrum lectus. Sed vitae dolor
+                viverra, condimentum erat at, rhoncus dolor.
+            </p>
+        </article>
+    </main>
+    <footer>
+        Footer
+    </footer>
+</div>
+</body>
+</html>

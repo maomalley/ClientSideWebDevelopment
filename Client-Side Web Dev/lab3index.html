@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lab 3</title>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css"
+          integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+    <style>
+        @import url('https://fonts.googleapis.com/css?family=Modak');
+
+        html, body {
+            width: 100vw;
+            padding: 0;
+            margin: 0;
+        }
+
+        body {
+            display: flex;
+            flex-direction: column;
+        }
+
+        header {
+            height: 100px;
+            background-color: aliceblue;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        nav ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: space-evenly;
+            position: fixed;
+            bottom: 0;
+            width: 100vw;
+        }
+
+        nav ul li {
+            background-color: lightgoldenrodyellow;
+            flex-grow: 1;
+            display: flex;
+            justify-content: center;
+        }
+
+        nav ul li a {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 1em;
+            text-decoration: none;
+            color: hotpink;
+            flex-direction: column;
+            font-size: .75rem;
+        }
+
+        nav ul li a i {
+            font-size: 3rem;
+        }
+
+        nav ul li a:hover {
+            background-color: #fdff6e;
+        }
+
+        main {
+            flex: auto;
+            background-color: #faff82;
+        }
+
+        main p {
+            padding-left: 10%;
+            padding-right: 10%;
+        }
+
+        footer {
+            height: 100px;
+            background-color: lightpink;
+            text-align: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .container {
+            display: flex;
+            flex-direction: column;
+            width: 100vw;
+        }
+
+        @media screen and (min-width: 768px) {
+            html, body {
+                height: 100vh;
+            }
+
+            nav ul {
+                position: static;
+            }
+        }
+
+        .name {
+            width: 2.5rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: 'Modak', cursive;
+            font-size: 4rem;
+            color: #ffff66;
+            text-shadow: 10px 10px #c4b60b;
+            transition: all .10s;
+            animation: opaque 1s infinite alternate;
+        }
+
+        .name:hover {
+            color: #ff99ff;
+            text-shadow: 10px 10px #ff00ff;
+            font-size: 5rem;
+            animation: flip 1s infinite alternate;
+        }
+
+        @keyframes opaque {
+            from {
+                opacity: 1;
+            }
+            to {
+                opacity: 0.5;
+            }
+        }
+
+        @keyframes flip {
+            from {
+                transform: rotateY(150deg);
+            }
+            to {
+                transform: rotateY(-150deg);
+            }
+        .red {
+            background-color: red;
+        }
+        }
+
+    </style>
+</head>
+
+<body>
+
+<div class="container">
+    <header>
+        <div class="name">M</div>
+        <div class="name">a</div>
+        <div class="name">u</div>
+        <div class="name">r</div>
+        <div class="name">e</div>
+        <div class="name">e</div>
+        <div class="name">n</div>
+    </header>
+    <nav>
+        <ul>
+            <li id="one"><a href="#"><i class="fas fa-dice-one"></i>One</a></li>
+            <li><a href="#"><i class="fas fa-dice-two"></i>Two</a></li>
+            <li><a href="#"><i class="fas fa-dice-three"></i>Three</a></li>
+            <li><a href="#"><i class="fas fa-dice-four"></i>Four</a></li>
+        </ul>
+    </nav>
+    <main>
+
+        <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. In accumsan neque quis velit eleifend dictum.
+            Mauris vitae felis ut velit viverra placerat. Morbi a enim odio. Donec eu elit risus. Praesent at ante
+            viverra libero elementum tincidunt. Duis dignissim, lacus a elementum congue, dolor neque commodo elit, id
+            auctor leo elit semper eros. Sed vestibulum sem vitae dui vestibulum interdum. Curabitur vitae dolor a ante
+            faucibus porttitor vitae ut massa. Donec dapibus augue sed purus pulvinar, ac elementum neque scelerisque.
+            Maecenas vulputate mauris velit, ut auctor quam facilisis eu. Sed non odio accumsan leo fringilla lobortis.
+            Vestibulum urna libero, laoreet vitae lacus a, pulvinar mollis arcu.
+        </p>
+        <p>
+            Proin pellentesque augue sed est lobortis, eget efficitur arcu euismod. Cras vitae dui tristique, tempus
+            justo posuere, cursus justo. Phasellus sagittis nisl vitae ullamcorper efficitur. Nunc ut aliquet velit.
+            Aliquam erat volutpat. Sed at lectus aliquet, sagittis massa non, ullamcorper lectus. Vivamus tempor lorem
+            sit amet lectus dignissim, sit amet mollis augue maximus. Maecenas eros felis, venenatis sed diam eu,
+            blandit fringilla ante. Aliquam mattis velit sed laoreet dapibus. Praesent vel posuere urna, quis dignissim
+            elit.
+        </p>
+        <p>
+            Quisque aliquam, lacus vitae vestibulum elementum, tortor quam vestibulum mi, quis ullamcorper augue massa
+            ac ex. Sed porta ultrices magna vel ullamcorper. Vivamus posuere sapien ac dictum gravida. Nunc varius,
+            nulla ut mollis ullamcorper, est nunc congue nulla, ac suscipit erat mi sollicitudin neque. Vestibulum
+            mollis tincidunt nisi, ac tincidunt mauris congue ut. Pellentesque habitant morbi tristique senectus et
+            netus et malesuada fames ac turpis egestas. Nunc et lorem id ipsum hendrerit auctor.
+        </p>
+        <p>
+            Praesent cursus dui ac leo blandit, non aliquam diam molestie. Donec malesuada massa magna, sed malesuada
+            lacus egestas id. Cras pellentesque odio in arcu auctor, nec convallis risus pharetra. Cras pharetra nisi
+            vehicula, auctor libero quis, condimentum mi. Aliquam nec turpis sit amet lorem pharetra vestibulum id vel
+            leo. Duis non diam non tellus ullamcorper auctor. Vestibulum dictum magna vel volutpat egestas.
+        </p>
+
+    </main>
+    <footer>
+        Footer
+    </footer>
+</div>
+<script>
+    document.getElementById('one').addEventListener('click', e =>{
+        document.getElementById('one').classList.toggle('red');
+    });
+</script>
+</body>
+</html>
